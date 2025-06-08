@@ -42,9 +42,18 @@ selected_song = st.selectbox("🎧 Type or select a song from the dropdown", mus
 if st.button('🔍 Show Recommendations'):
     names, posters, links = recommend(selected_song)
 
-    cols = st.columns(10)
-    for i in range(10):
-        with cols[i]:
+        # First 5
+    cols1 = st.columns(5)
+    for i in range(min(5, len(names))):
+        with cols1[i]:
+            st.image(posters[i], use_container_width=True)
+            st.markdown(f"**{names[i]}**")
+            st.markdown(f"[Listen on Spotify]({links[i]})", unsafe_allow_html=True)
+    
+    # Next 5
+    cols2 = st.columns(5)
+    for i in range(5, min(10, len(names))):
+        with cols2[i - 5]:
             st.image(posters[i], use_container_width=True)
             st.markdown(f"**{names[i]}**")
             st.markdown(f"[Listen on Spotify]({links[i]})", unsafe_allow_html=True)
