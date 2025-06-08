@@ -18,7 +18,7 @@ def recommend(song):
     recommended_music_posters = []
     recommended_spotify_links = []
 
-    for entry in top_similar[:10]:  # Get top 5 recommendations
+    for entry in top_similar[:10]:  # Get top 10 recommendations
         sim_song = entry["song"]
         artist = entry["artist"]
 
