@@ -18,7 +18,7 @@ def recommend(song):
     recommended_music_posters = []
     recommended_spotify_links = []
 
-    for entry in top_similar[:5]:  # Get top 5 recommendations
+    for entry in top_similar[:10]:  # Get top 5 recommendations
         sim_song = entry["song"]
         artist = entry["artist"]
 
@@ -42,8 +42,8 @@ selected_song = st.selectbox("🎧 Type or select a song from the dropdown", mus
 if st.button('🔍 Show Recommendations'):
     names, posters, links = recommend(selected_song)
 
-    cols = st.columns(5)
-    for i in range(5):
+    cols = st.columns(10)
+    for i in range(10):
         with cols[i]:
             st.image(posters[i], use_container_width=True)
             st.markdown(f"**{names[i]}**")
