@@ -1,4 +1,4 @@
-# music_reccomendor
+# music_recommender
 ## 🎵 Music Recommender System
 Welcome to the Music Recommender System — a smart app that helps you discover songs based on lyrics and artist similarity! Whether you're vibing with something mellow or want a track that feels just like your favorite, this tool is designed to make music discovery intuitive and enjoyable.
 
